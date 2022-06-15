@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Reporting.XpsRendering</name>
+    </assembly>
+    <members>
+        <member name="M:Telerik.Reporting.XpsRendering.DocumentModel.XpsWriting.ContainerElement`1.CreateActionCanvas">
+            <summary>
+            Used only in WinUI rendering.
+            </summary>
+        </member>
+    </members>
+</doc>

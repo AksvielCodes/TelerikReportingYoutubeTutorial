@@ -1,0 +1,34 @@
+@using Telerik.Reporting
+@using Telerik.ReportViewer.Mvc
+
+<style>
+    #reportViewer1 {
+        position: relative;
+        width: 1500px; 
+        height: 800px;
+    }
+</style>
+
+<script src="~/Scripts/resources.es.js"></script>
+
+<script src="@Url.Content("~/api/reports/resources/js/telerikReportViewer-16.0.22.119.min.js/")"></script>
+
+@(Html.TelerikReporting().ReportViewer()
+        .Id("reportViewer1")
+        .ServiceUrl(Url.Content("~/api/reports"))
+        .ReportSource(new UriReportSource() { Uri = "SampleReport.trdp" })
+        .ViewMode(ViewMode.Interactive)
+        .ScaleMode(ScaleMode.FitPageWidth)
+        .Scale(1.0)
+        .PersistSession(false)
+        .PrintMode(PrintMode.AutoSelect)
+        .SendEmail(new SendEmail { Enabled = false })
+        .EnableAccessibility(false)
+
+        //Parameter appear as DropDownList
+        .Parameters(new Parameters { Editors = new Editors { MultiSelect = EditorTypes.ComboBox, SingleSelect = EditorTypes.ComboBox } }) 
+
+        // Net Core
+        //.Parameters(new ParametersOptions { Editors = new EditorsOptions { MultiSelect = EditorType.ComboBox, SingleSelect = EditorType.ComboBox } })
+)
+
